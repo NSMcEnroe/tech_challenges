@@ -1,3 +1,5 @@
+# (3/29) Failed submission, come back after a month
+
 ################ Instructions ################ 
 
 # You are given an integer array nums and a positive integer k.
@@ -49,12 +51,48 @@
 
 ################ First Attempt ################ 
 
+def count_subarrays(nums, k)
+  max = nums.max
+  count = 0
+  i = 0
+  j = (k-1)
 
+  while (j < nums.length)
+      while (j < nums.length)
+          new_array = (nums[i..j])
+          if (new_array.count(max) >= k)
+              count += 1
+          end
+          j += 1
+      end
+      i += 1
+      j = (i + k - 1)
+  end
+  return count
+end
 
-
+# Time limit was exceeded, which isn't surprising
 
 ################ Second Attempt ################ 
 
 
 
 ################ Alternative Solutions ################
+
+# Sliding window is most efficient
+
+def count_subarrays(nums, k)
+  max = nums.max
+  left = res = count = 0
+
+  nums.each do |val|
+      count += 1 if val == max
+      while count >= k
+          count -= 1 if nums[left] == max
+          left += 1
+      end
+      res += left
+  end
+
+  res
+end
