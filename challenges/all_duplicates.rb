@@ -44,10 +44,43 @@
 
 ################ First Attempt ################ 
 
+def find_duplicates(nums)
+  hash = Hash.new(0)
+  nums.each do |number|
+      hash[number] += 1
+  end
+  nums = []
+  hash.each do |k,v|
+      if v == 2
+          nums << k
+      end
+  end
+  return nums
+end
 
-################ Second Attempt ################ 
-
-
+# Based on runtime and memory numbers, I may not have the most efficient way.
+# After futher research, time complexity is good
 
 ################ Alternative Solutions ################
+
+# Uses the index to its advantage
+# Flips the index value to negative
+# If that index is already negative, must have seen that number before
+
+def find_duplicates(nums)
+  duplicates = []
+
+  nums.each do |num|
+      index = num.abs - 1 # Convert num to index (1-based to 0-based)
+      if nums[index] < 0
+          # If the value at this index is already negative, num is a duplicate
+          duplicates << num.abs
+      else
+          # Mark this num as seen by negating the value at its corresponding index
+          nums[index] = -nums[index]
+      end
+  end
+
+  return duplicates
+end
 
