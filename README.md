@@ -10,7 +10,7 @@ Each file in the repository corresponds to a specific challenge on LeetCode and 
 - **Instructions**: The original problem statement from LeetCode.
 - **Clarification Questions**: Questions I would ask to better understand the problem or constraints.
 - **Pseudocode**: My initial approach to solving the challenge, expressed in pseudocode.
-- **My Attempts**: Detailed code for each of my attempts, including explanations of my thought process and any issues I encountered.
+- **My Attempts**: Detailed code for each of my attempts, including explanations of my thought process and any issues I encountered.  If my first attempt is not successful, I will come back to the challenge in a month to hopefully solidify the concepts.
 - **Alternative Solutions**: Exploration of different approaches to solve the problem, including more efficient or elegant solutions found within the LeetCode community or developed through further research.
 
 ## Contributing
