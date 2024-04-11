@@ -41,10 +41,10 @@
 
 ################ Clarification Questions ################
 
-- Am I ordering the random deck so another method can deal them?
-- Can the values be negative?
-- Expected Time and Space complexity?
-- Is it possible to do this in a single array?
+# - Am I ordering the random deck so another method can deal them?
+# - Can the values be negative?
+# - Expected Time and Space complexity?
+# - Is it possible to do this in a single array?
 
 ################ Pseudocode ################ 
 
