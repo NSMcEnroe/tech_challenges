@@ -26,11 +26,11 @@
 
 ################ Clarification Questions ################
 
--To specify, the y-values do not matter in this problem correct?
+# -To specify, the y-values do not matter in this problem correct?
 
--Preferred time and space complexity?
+# -Preferred time and space complexity?
 
--Should this solition also work for -x and -y values, and do them being positive in the contraints give a clue to the preferred answer?
+# -Should this solition also work for -x and -y values, and do them being positive in the contraints give a clue to the preferred answer?
 
 
 ################ Pseudocode ################ 
