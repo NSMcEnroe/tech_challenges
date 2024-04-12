@@ -40,24 +40,24 @@
 
 ################ Pseudocode ################ 
 
--I'm thinking of having two counters, one for left and one for right
--The stars really complicate the problem though
+# -I'm thinking of having two counters, one for left and one for right
+# -The stars really complicate the problem though
 
--I could possibly use a single counter, having this value go up or down based off of the element
+# -I could possibly use a single counter, having this value go up or down based off of the element
 
--Nah, I like a brute force approach better
--Time complexity will be horrible though
--Split into an array, find a left, go through until I find a right
--If I don't find a right, start another process including stars
+# -Nah, I like a brute force approach better
+# -Time complexity will be horrible though
+# -Split into an array, find a left, go through until I find a right
+# -If I don't find a right, start another process including stars
 
--Hm, an array length of 1 creates a problem, will have to find an outlet for that
+# -Hm, an array length of 1 creates a problem, will have to find an outlet for that
 
--I might only need one pointer with a brute force approach
+# -I might only need one pointer with a brute force approach
 
--Too much logic; need to swtich approaches
+# -Too much logic; need to swtich approaches
 
--Wait, what if I approached this as a shift and pop
--Check the ends, then delete them off the array
+# -Wait, what if I approached this as a shift and pop
+# -Check the ends, then delete them off the array
 
 ################ First Attempt ################ 
 
