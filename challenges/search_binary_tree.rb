@@ -41,7 +41,7 @@
 # -Otherwise shift right
 # -Should bring you to the correct node
 
-################ Firsty Attempt ################ 
+################ First Attempt ################ 
 
 # -Didn't quite understand a binary search tree
 
