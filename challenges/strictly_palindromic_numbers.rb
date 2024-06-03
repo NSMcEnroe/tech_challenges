@@ -50,13 +50,13 @@
 -Terrible runtime
 
 def is_strictly_palindromic(n)
-  (2..(n-2)).each do |number|
-      temp = n.to_s(number)
-      if temp != temp.reverse
-          return false
-      end
-  end
-  return true
+    (2..(n-2)).each do |number|
+        temp = n.to_s(number)
+        if temp != temp.reverse
+            return false
+        end
+    end
+    return true
 end
 
 ################ Alternative Solutions ################
