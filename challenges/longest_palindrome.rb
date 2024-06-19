@@ -24,9 +24,9 @@
 
 ################ Clarification Questions ################
 
--Would a greedy algorithm be preferred?
+# -Would a greedy algorithm be preferred?
 
--Preferred time and space complexity?
+# -Preferred time and space complexity?
 
 
 ################ Pseudocode ################ 
