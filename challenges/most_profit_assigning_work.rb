@@ -72,5 +72,4 @@ end
 # -Then iterate through the workers, using the new combined array
 # -Combining the values will help with time efficiency
 
-################ Alternative Solutions ################
 
