@@ -55,8 +55,8 @@
 
 ################ First Attempt ################ 
 
--Time complexity: O(n)
--Space complexity: O(1)
+# -Time complexity: O(n)
+# -Space complexity: O(1)
 
 def min_operations(nums)
   answer = 0
