@@ -50,23 +50,23 @@
 # -Better than average time and space complexity, but I think I can do better
 
 def intersect(nums1, nums2)
-  nums1.sort!
-  nums2.sort!
-  i = 0
-  j = 0
-  answer = []
-  until i >= nums1.length || j >= nums2.length
-      if nums1[i] == nums2[j]
-          answer << nums1[i]
-          i += 1
-          j += 1
-      elsif nums1[i] > nums2[j]
-          j += 1
-      else
-          i += 1
-      end
-  end
-  return answer
+    nums1.sort!
+    nums2.sort!
+    i = 0
+    j = 0
+    answer = []
+    until i >= nums1.length || j >= nums2.length
+        if nums1[i] == nums2[j]
+            answer << nums1[i]
+            i += 1
+            j += 1
+        elsif nums1[i] > nums2[j]
+            j += 1
+        else
+            i += 1
+        end
+    end
+    return answer
 end
 
 ################ Alternative Solutions ################
@@ -76,21 +76,21 @@ end
 # -If it's present in the hashmap, subtract 1 and put into answer
 
 def intersect(nums1, nums2)
-  counts = Hash.new(0)
-  answer = []
+    counts = Hash.new(0)
+    answer = []
 
-  # Count elements in nums1
-  nums1.each do |num|
-      counts[num] += 1
-  end
+# Count elements in nums1
+    nums1.each do |num|
+        counts[num] += 1
+    end
 
-  # Find intersections with nums2
-  nums2.each do |num|
-      if counts[num] > 0
-          answer << num
-          counts[num] -= 1
-      end
-  end
+    # Find intersections with nums2
+    nums2.each do |num|
+        if counts[num] > 0
+            answer << num
+            counts[num] -= 1
+        end
+    end
 
-  return answer
+    return answer
 end
