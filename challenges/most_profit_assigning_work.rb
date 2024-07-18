@@ -69,7 +69,8 @@ end
 # -After looking at possible answers
 # -Combine the difficulty with the profit
 # -Sort the workers
-# -Then iterate through the workers, using the new combined array
-# -Combining the values will help with time efficiency
+# -Might need to sort the profit as well
+# -Combine the worker with the most profit possible
+
 
 
