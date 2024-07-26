@@ -75,6 +75,42 @@ end
 
 ################ Second Attempt ################ 
 
+# -Looking at my notes, focusing on sliding window
+# -The problem is the left side of the window
+# -Will need quite a bit of variables
+# -Will grow the sliding window until I hit k maxes
+# -However, I will need to keep track of how many values are on the left
+
+# -Still getting wrong values
+# -I see, I need to add the lefts to the answer at each new value of nums
+
+
+def count_subarrays(nums, k)
+    max = nums.max
+    appears = 0
+    i = 0
+    j = 0
+    left = 0 
+    answer = 0
+    until j >= nums.length
+        if nums[j] == max
+            appears += 1
+        end
+        if appears == k
+            until appears < k
+                if nums[i] == max
+                    appears -= 1
+                end
+                left += 1
+                i += 1
+            end
+        end
+        answer += left
+        j += 1
+    end
+    return answer
+end
+
 
 
 ################ Alternative Solutions ################
