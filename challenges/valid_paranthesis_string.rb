@@ -83,10 +83,63 @@ def check_valid_string(s)
 end
 
 
+################ Second Attempt ################ 
+
+# -Try to do a two-pointer approach
+# -My focus is on making sure from the left we have a left or a star
+# -And from the right, a right and a star
+# -Doesn't check for inner ()
+
+# -Switch to an enumerable
+# -Count lefts, rights, and stars
+# -Have checks making sure the left + stars can account for rights
+# -Hmm, problem is doesn't account for location
+
+# -I keep on doing different approaches, but they have the same logic
+# -I need to account for locations
+# -I'm going back to two pointer approach
+
+# -I see what my original problem is
+# -I need to run through the entire array from both sides
+# -That way, it accounts there's enough rights for the lefts, and lefts for the rights
+
+# -Not great for space or time complexity though
+
+def check_valid_string(s)
+    front = 0
+    back = 0
+    i = 0
+    j = s.length - 1
+    until i >= s.length
+        if s[i] == "(" || s[i] == "*"
+            front += 1
+        else
+            front -= 1
+        end
+        if s[j] == ")" || s[j] == "*"
+            back += 1
+        else
+            back -= 1
+        end
+        if back < 0 || front < 0
+            return false
+        end
+        i += 1
+        j -= 1
+    end
+    return true
+end
+
+
 ################ Alternative Solutions ################
 
 # Had a similar idea earlier, but decided to shift.  Will study and return to this solution later
 # Why is it called greedy?
+
+# -I see why this one works
+# -It has the same apporach as mine, but keeps it in variables
+# -Lo checks for enough rights, and Hi checks that lefts don't dominate the end
+# -Whoops, it's reversed. Lo is checking for appropriate right par.
 
 def check_valid_string(s)
   # lo and hi are smallest and largest possible number of open left brackers after processing the current char in the string
