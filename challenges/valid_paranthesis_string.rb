@@ -1,5 +1,3 @@
-# Wrong answer. Try again after May 6th
-
 ################ Instructions ################ 
 
 # Given a string s containing only three types of characters: '(', ')' and '*', return true if s is valid.
