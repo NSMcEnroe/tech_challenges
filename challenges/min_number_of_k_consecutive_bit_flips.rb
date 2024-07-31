@@ -87,6 +87,53 @@ end
 
 ################ Second Attempt ################
 
+# -Doesn't work for "quick flips"
+
+def min_k_bit_flips(nums, k)
+    answer = 0
+    flip = 0
+    pivot = nums.length - k
+    marker = pivot
+    (0...pivot).each do |i|
+        if i == marker
+            flip = 0
+        end
+        if nums[i] == flip
+            if flip == 0
+                flip = 1
+            else 
+                flip = 0
+            end
+            answer += 1
+            marker = k + i
+        end
+    end
+    flip = nums[pivot]
+    if marker <= pivot
+        marker = pivot + k + 1
+    end
+    (pivot...(pivot+k)).each do |i|
+        if i >= marker
+            if nums[i] == flip 
+                return -1
+            end
+        else
+            if nums[i] != flip 
+                return -1
+            end
+        end
+    end
+    if nums[pivot + k - 1] == 0
+        return (answer + 1)
+    else
+        return answer
+    end
+end
+
+# -Make your marker when you flip, not at the end.  This helps prevent problems with "quick flips"
+# - Switch the flip once you get to an end of a marker
+# -To be more concise, ^= is a bit flip operator (in case I forget)
+
 ################ Alternative Solutions ################
 
 
