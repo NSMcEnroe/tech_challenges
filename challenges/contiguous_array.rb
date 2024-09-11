@@ -67,7 +67,58 @@ end
 # -If switched to a sum array
 # -Can figure out the length between similar numbers
 
+################ First Attempt (September 2024) ################ 
 
+-Still a little clunky, but works
 
+def find_max_length(nums)
+    new_nums = []
+    sum = 0
+    (0...nums.length).each do |i|
+        if nums[i] == 0
+            sum -= 1
+        else
+            sum += 1
+        end
+        new_nums << sum
+    end
+    indexes = Hash.new(0)
+    new_nums.each_with_index do |sum, index|
+        if !indexes.key?(sum)
+            indexes[sum] = []
+        end
+        indexes[sum] << index
+    end
+    biggest = 0
+    indexes.each do |k,v|
+        if v.length > 1
+            temp = v.max - v.min
+            biggest = [biggest,temp].max
+        end
+    end
+    if indexes.key?(0)
+        return [biggest, indexes[0].max + 1].max
+    else
+        return biggest
+    end
+end
 
+################ Alternative Solutions ################
 
+def find_max_length(nums)
+    hashmap = {0 => -1}
+    count = 0
+    ans = 0
+    
+    nums.each_with_index do |num, i|
+        count += num == 1 ? 1 : -1
+        
+        if hashmap.key?(count)
+            ans = [ans, i - hashmap[count]].max
+        else
+            hashmap[count] = i
+        end
+    end
+    
+    ans
+end
