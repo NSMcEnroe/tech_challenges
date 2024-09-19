@@ -1,5 +1,3 @@
-# - Note: Not Completed
-
 ################ Instructions ################ 
 
 # Given a binary array nums, return the maximum length of a contiguous subarray with an equal number of 0 and 1.
@@ -67,7 +65,7 @@ end
 # -If switched to a sum array
 # -Can figure out the length between similar numbers
 
-################ First Attempt (September 2024) ################ 
+################ Second Attempt (September 2024) ################ 
 
 -Still a little clunky, but works
 
